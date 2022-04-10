@@ -72,8 +72,6 @@ class TfidVectorize:
         return final_normalized_output
 
     def cosine_similarity(self, query_vector: np.ndarray, corpus_vectors: np.ndarray):
-        print("Query vector shape:", query_vector.shape)
-        print("Corpus vector shape:", corpus_vectors.shape)
         cosine_similarity_res = np.array([])
 
         for i in range(corpus_vectors.shape[0]):

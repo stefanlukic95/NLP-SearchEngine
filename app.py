@@ -15,8 +15,6 @@ def main():
     clean_corpus = clean_corpus[:1000]
     print(clean_corpus[:5])
 
-    vectorizer = TfidVectorize(clean_corpus)
-
     # query data fit/transform
     query_question = [input("Enter a question:")]
     engine = QuestionsSearchEngine(clean_corpus, data_path)
