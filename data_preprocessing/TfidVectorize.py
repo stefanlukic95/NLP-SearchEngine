@@ -59,15 +59,11 @@ class TfidVectorize:
                         np.log((int(len(questions))) / (self.count_of_words_in_whole_dataset(questions, word)))))
 
                     values.append(tf_idf_value)
-                    # print("tfidf values", values)
                     sparse_matrix = csr_matrix((values, (rows, columns)),
                                                shape=(len(questions), len(word_dimension_dict)))
 
                     final_normalized_output = (sparse_matrix - np.min(sparse_matrix)) / (
                             np.max(sparse_matrix) - np.min(sparse_matrix))
-
-                    # print("final normalized output", final_normalized_output)
-                    # print("Sparse matrix", sparse_matrix)
 
         return final_normalized_output
 
@@ -88,8 +84,5 @@ class TfidVectorize:
         top_results = sorted_array[-5:]
 
         top_indices = (-cos_similarity_normalized).argsort()[:5]
-
-        print("Cosine similarity top scores:", top_results[::-1])
-        print("Top indices:", top_indices)
 
         return cos_similarity_normalized, top_results[::-1], top_indices

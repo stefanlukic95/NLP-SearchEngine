@@ -14,8 +14,6 @@ class QuestionsSearchEngine:
         query_transform = vectorizer.transform_custom(query, fit_questions)
         question_transfrom = vectorizer.transform_custom(self.questions, fit_questions)
 
-        print("Query question:\t", query[0])
-        print("\n")
         cosine_similarity_res, top_results, top_indices = vectorizer.cosine_similarity(query_transform,
                                                                                        question_transfrom)
         data_preprocessing = DataPreprocessing(self.data_path)

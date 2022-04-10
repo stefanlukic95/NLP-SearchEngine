@@ -1,7 +1,5 @@
-from typing import Sequence
 import pandas as pd
 import numpy as np
-from numpy.linalg import norm
 
 
 # utility function for nomalization between [-1,1]

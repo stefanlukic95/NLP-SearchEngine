@@ -24,13 +24,6 @@ def cosine_similarity(query_vector: np.ndarray, corpus_vectors: np.ndarray) -> n
                          / norm(np.squeeze(query_vector)) \
                          * norm(np.squeeze(corpus_vectors[i]))
         cosine_similarity_res = np.append(cosine_similarity_res, cos_similarity)
-
-    sorted_result_array = np.argsort(cosine_similarity_res)
-    sorted_array = cosine_similarity_res[sorted_result_array]
-    top_results = sorted_array[-5:]
-
-    top_indices = (-cosine_similarity_res).argsort()[:5]
-
     return cosine_similarity_res
 
 
